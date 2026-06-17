@@ -7,7 +7,7 @@ window.PRIVACY_I18N = {
     heroTitleHtml: "Your privacy, <em>protected.</em>",
     meta: {
       effective: { label: "Effective date", value: "June 12, 2026" },
-      updated: { label: "Last updated", value: "June 12, 2026" },
+      updated: { label: "Last updated", value: "June 17, 2026" },
       platform: { label: "Platform", value: "iOS (iPhone & iPad)" }
     },
     quickNavTitle: "Contents",
@@ -49,7 +49,7 @@ window.PRIVACY_I18N = {
           </ul>
           <p><strong>Information that may be sent to third parties (future updates only):</strong></p>
           <ul>
-            <li>In a future app update we may integrate <strong>Google Firebase Analytics and Crashlytics</strong> to measure anonymous usage events and app stability. When enabled, data is sent only if you allow App Tracking on iOS (see Section 04). The current App Store release does <strong>not</strong> transmit analytics data yet.</li>
+            <li>In a future app update we may integrate <strong>Google Firebase Analytics and Crashlytics</strong> to measure anonymous usage events and app stability. When that update ships, we may also enable Apple's App Tracking Transparency prompt if cross-app tracking applies (see Section 04). The current App Store release does <strong>not</strong> show the ATT prompt and does <strong>not</strong> transmit analytics data.</li>
           </ul>
         `
       },
@@ -102,12 +102,15 @@ window.PRIVACY_I18N = {
         number: "04",
         title: "App Tracking Transparency (ATT)",
         bodyHtml: `
-          <p>PhotoPrep may show Apple’s <strong>App Tracking Transparency</strong> prompt, which asks whether the app may use your device’s advertising identifier (IDFA) for tracking across other companies’ apps and websites.</p>
+          <div class="callout callout-warn">
+            <p><strong>Current App Store release (v1.0):</strong> PhotoPrep does <strong>not</strong> show Apple’s App Tracking Transparency (ATT) prompt and does <strong>not</strong> track you across other companies’ apps or websites. No advertising identifier (IDFA) is used.</p>
+          </div>
+          <p>Apple’s <strong>App Tracking Transparency</strong> framework asks whether an app may use your device’s advertising identifier (IDFA) for tracking across other companies’ apps and websites.</p>
           <ul>
-            <li><strong>Why we ask:</strong> We plan to use anonymous analytics (Firebase) in future updates to understand which features are used and to improve stability. ATT permission is required by Apple before that identifier can be used for analytics purposes linked to other apps.</li>
-            <li><strong>Current release:</strong> Analytics are not yet active. Denying tracking does <strong>not</strong> affect any PhotoPrep feature today — all editing tools work fully without tracking permission.</li>
+            <li><strong>Why we may ask in the future:</strong> When we integrate Firebase Analytics in a later update, we may request ATT permission if IDFA is used for cross-app analytics — as required by Apple.</li>
+            <li><strong>Current release:</strong> The ATT prompt is <strong>disabled</strong>. All editing tools work without any tracking permission.</li>
             <li><strong>No cross-app advertising:</strong> PhotoPrep does not show ads and does not sell your data. We do not use tracking for advertising.</li>
-            <li><strong>Your choice:</strong> You can change your decision anytime in <strong>Settings → Privacy & Security → Tracking</strong> on your iPhone or iPad, or in <strong>Menu → Privacy → Permissions</strong> inside PhotoPrep.</li>
+            <li><strong>When enabled in a future version:</strong> You will be able to change your choice in <strong>Settings → Privacy & Security → Tracking</strong> on your iPhone or iPad, or in <strong>Menu → Privacy → Permissions</strong> inside PhotoPrep.</li>
           </ul>
         `
       },
@@ -137,9 +140,9 @@ window.PRIVACY_I18N = {
             <li>Screen and feature usage events (for example, which editor mode was used).</li>
             <li>Processing success or failure events with editor mode name, photo count, and bytes saved — <strong>never photo content or filenames you select</strong>.</li>
             <li>Crash stack traces and non-fatal error reports to help fix stability issues.</li>
-            <li>Standard Firebase device and app instance identifiers as described in Google’s documentation, subject to your ATT choice on iOS.</li>
+            <li>Standard Firebase device and app instance identifiers as described in Google’s documentation. If IDFA-based cross-app tracking is used, this will be subject to your ATT choice on iOS.</li>
           </ul>
-          <p>You can limit analytics using your device privacy settings and by declining App Tracking. Uninstalling the app stops further data collection from that installation.</p>
+          <p>In the current release, no analytics data is collected. When Firebase is enabled in a future update, you may limit analytics via device privacy settings and by declining App Tracking if the ATT prompt is shown. Uninstalling the app stops further data collection from that installation.</p>
         `
       },
       {
@@ -192,7 +195,7 @@ window.PRIVACY_I18N = {
             <li><strong>Access:</strong> History and settings are available directly inside the app.</li>
             <li><strong>Deletion:</strong> Delete history entries, clear all history in Settings, or uninstall the app.</li>
             <li><strong>Photo permissions:</strong> Manage Photo Library access in iOS Settings or Menu → Privacy → Permissions.</li>
-            <li><strong>Tracking:</strong> Decline App Tracking without losing access to editing features.</li>
+            <li><strong>Tracking:</strong> The current release does not track you or show the ATT prompt. In a future version with Firebase, you may decline App Tracking without losing access to editing features.</li>
             <li><strong>Metadata control:</strong> Enable default EXIF stripping in Settings before sharing photos.</li>
             <li><strong>GDPR (EU/EEA):</strong> Additional rights may apply. For future Firebase data processed by Google, see Google’s GDPR resources.</li>
             <li><strong>CCPA (California):</strong> PhotoPrep does not sell your personal information.</li>
@@ -237,7 +240,7 @@ window.PRIVACY_I18N = {
     heroTitleHtml: "Gizliliğiniz, <em>güvende.</em>",
     meta: {
       effective: { label: "Yürürlük tarihi", value: "12 Haziran 2026" },
-      updated: { label: "Son güncelleme", value: "12 Haziran 2026" },
+      updated: { label: "Son güncelleme", value: "17 Haziran 2026" },
       platform: { label: "Platform", value: "iOS (iPhone ve iPad)" }
     },
     quickNavTitle: "İçindekiler",
@@ -279,7 +282,7 @@ window.PRIVACY_I18N = {
           </ul>
           <p><strong>Üçüncü taraflara gönderilebilecek bilgiler (yalnızca gelecekteki güncellemeler):</strong></p>
           <ul>
-            <li>Gelecekteki bir uygulama güncellemesinde anonim kullanım olaylarını ve uygulama kararlılığını ölçmek amacıyla <strong>Google Firebase Analytics ve Crashlytics</strong> entegrasyonu yapılabilir. Etkinleştirildiğinde veriler yalnızca iOS'ta Uygulama Takibine izin vermeniz durumunda gönderilir (bkz. Bölüm 04). Mevcut App Store sürümü henüz analitik verisi iletmez.</li>
+            <li>Gelecekteki bir uygulama güncellemesinde anonim kullanım olaylarını ve uygulama kararlılığını ölçmek amacıyla <strong>Google Firebase Analytics ve Crashlytics</strong> entegrasyonu yapılabilir. Bu güncelleme geldiğinde uygulamalar arası takip söz konusuysa Apple Uygulama Takip Şeffaflığı (ATT) istemi de etkinleştirilebilir (bkz. Bölüm 04). Mevcut App Store sürümü ATT istemi <strong>göstermez</strong> ve analitik verisi <strong>iletmez</strong>.</li>
           </ul>
         `
       },
@@ -332,12 +335,15 @@ window.PRIVACY_I18N = {
         number: "04",
         title: "Uygulama Takip Şeffaflığı (ATT)",
         bodyHtml: `
-          <p>PhotoPrep, Apple'ın <strong>Uygulama Takip Şeffaflığı</strong> istemini gösterebilir. Bu istem, uygulamanın cihazınızın reklam tanımlayıcısını (IDFA) diğer şirketlerin uygulamaları ve web siteleri arasında takip amacıyla kullanıp kullanamayacağını sorar.</p>
+          <div class="callout callout-warn">
+            <p><strong>Mevcut App Store sürümü (v1.0):</strong> PhotoPrep, Apple Uygulama Takip Şeffaflığı (ATT) istemini <strong>göstermez</strong> ve diğer şirketlerin uygulamaları/web siteleri arasında sizi <strong>takip etmez</strong>. Reklam tanımlayıcısı (IDFA) kullanılmaz.</p>
+          </div>
+          <p>Apple'ın <strong>Uygulama Takip Şeffaflığı</strong> çerçevesi, bir uygulamanın cihazınızın reklam tanımlayıcısını (IDFA) diğer şirketlerin uygulamaları ve web siteleri arasında takip amacıyla kullanıp kullanamayacağını sorar.</p>
           <ul>
-            <li><strong>Neden istiyoruz:</strong> Gelecekteki güncellemelerde hangi özelliklerin kullanıldığını anlamak ve kararlılığı iyileştirmek için anonim analitik (Firebase) kullanmayı planlıyoruz. Apple, bu tanımlayıcının diğer uygulamalarla ilişkili analitik amaçlarla kullanılabilmesi için ATT iznini zorunlu kılar.</li>
-            <li><strong>Mevcut sürüm:</strong> Analitik henüz aktif değildir. Takibi reddetmek bugün herhangi bir PhotoPrep özelliğini <strong>etkilemez</strong> — tüm düzenleme araçları takip izni olmadan tamamen çalışır.</li>
+            <li><strong>Gelecekte neden isteyebiliriz:</strong> Firebase Analytics entegre edildiğinde, IDFA uygulamalar arası analitik için kullanılıyorsa Apple'ın gerektirdiği şekilde ATT izni istenebilir.</li>
+            <li><strong>Mevcut sürüm:</strong> ATT istemi <strong>devre dışıdır</strong>. Tüm düzenleme araçları takip izni olmadan çalışır.</li>
             <li><strong>Uygulamalar arası reklam yok:</strong> PhotoPrep reklam göstermez ve verilerinizi satmaz. Takibi reklam amacıyla kullanmayız.</li>
-            <li><strong>Tercihiniz:</strong> Kararınızı istediğiniz zaman iPhone veya iPad'inizde <strong>Ayarlar → Gizlilik ve Güvenlik → Takip</strong> yolundan ya da PhotoPrep içinde <strong>Menü → Gizlilik → İzinler</strong> bölümünden değiştirebilirsiniz.</li>
+            <li><strong>Gelecekte etkinleştirildiğinde:</strong> Tercihinizi iPhone/iPad'de <strong>Ayarlar → Gizlilik ve Güvenlik → Takip</strong> veya PhotoPrep içinde <strong>Menü → Gizlilik → İzinler</strong> bölümünden değiştirebileceksiniz.</li>
           </ul>
         `
       },
@@ -367,9 +373,9 @@ window.PRIVACY_I18N = {
             <li>Ekran ve özellik kullanım olayları (örneğin hangi düzenleyici modunun kullanıldığı).</li>
             <li>Düzenleyici modu adı, fotoğraf sayısı ve kaydedilen bayt miktarı içeren işleme başarı/başarısızlık olayları — <strong>asla fotoğraf içeriği veya seçtiğiniz dosya adları değil</strong>.</li>
             <li>Kararlılık sorunlarını gidermeye yardımcı olmak için çökme yığın izleri ve kritik olmayan hata raporları.</li>
-            <li>Google belgelerinde açıklandığı şekilde, iOS'taki ATT tercihinize tabi standart Firebase cihaz ve uygulama örneği tanımlayıcıları.</li>
+            <li>Google belgelerinde açıklandığı şekilde standart Firebase cihaz ve uygulama örneği tanımlayıcıları. IDFA tabanlı uygulamalar arası takip kullanılırsa iOS'taki ATT tercihinize tabi olur.</li>
           </ul>
-          <p>Cihaz gizlilik ayarlarınızı kullanarak ve Uygulama Takibini reddederek analitiği sınırlayabilirsiniz. Uygulamayı kaldırmak, o kurulumdan sonraki veri toplanmasını durdurur.</p>
+          <p>Mevcut sürümde analitik verisi toplanmaz. Firebase gelecekte etkinleştirildiğinde, ATT istemi gösterilirse cihaz gizlilik ayarlarından ve Uygulama Takibini reddederek analitiği sınırlayabilirsiniz. Uygulamayı kaldırmak, o kurulumdan sonraki veri toplanmasını durdurur.</p>
         `
       },
       {
@@ -422,7 +428,7 @@ window.PRIVACY_I18N = {
             <li><strong>Erişim:</strong> Geçmiş ve ayarlar doğrudan uygulama içinde kullanılabilir.</li>
             <li><strong>Silme:</strong> Geçmiş kayıtlarını silin, Ayarlar'dan tüm geçmişi temizleyin veya uygulamayı kaldırın.</li>
             <li><strong>Fotoğraf izinleri:</strong> Fotoğraf Arşivi erişimini iOS Ayarları'ndan veya Menü → Gizlilik → İzinler bölümünden yönetin.</li>
-            <li><strong>Takip:</strong> Düzenleme özelliklerine erişimi kaybetmeden Uygulama Takibini reddedin.</li>
+            <li><strong>Takip:</strong> Mevcut sürüm sizi takip etmez ve ATT istemi göstermez. Firebase'li gelecek sürümde düzenleme özelliklerine erişimi kaybetmeden Uygulama Takibini reddedebilirsiniz.</li>
             <li><strong>Meta veri kontrolü:</strong> Fotoğrafları paylaşmadan önce Ayarlar'da varsayılan EXIF temizlemeyi etkinleştirin.</li>
             <li><strong>GDPR (AB/AEA):</strong> Ek haklar geçerli olabilir. Google tarafından işlenen gelecekteki Firebase verileri için Google'ın GDPR kaynaklarına bakın.</li>
             <li><strong>CCPA (Kaliforniya):</strong> PhotoPrep kişisel bilgilerinizi satmaz.</li>
@@ -470,7 +476,7 @@ window.PRIVACY_I18N = {
     heroTitleHtml: "Votre vie privée, <em>protégée.</em>",
     meta: {
       effective: { label: "Date d'effet", value: "12 juin 2026" },
-      updated: { label: "Dernière mise à jour", value: "12 juin 2026" },
+      updated: { label: "Dernière mise à jour", value: "17 juin 2026" },
       platform: { label: "Plateforme", value: "iOS (iPhone et iPad)" }
     },
     quickNavTitle: "Sommaire",
@@ -512,7 +518,7 @@ window.PRIVACY_I18N = {
           </ul>
           <p><strong>Informations pouvant être envoyées à des tiers (mises à jour futures uniquement) :</strong></p>
           <ul>
-            <li>Dans une future mise à jour de l'application, nous pourrions intégrer <strong>Google Firebase Analytics et Crashlytics</strong> afin de mesurer des événements d'utilisation anonymes et la stabilité de l'application. Lorsqu'il est activé, l'envoi de données a lieu uniquement si vous autorisez le suivi des apps sur iOS (voir section 04). La version actuelle de l'App Store ne transmet pas encore de données analytiques.</li>
+            <li>Dans une future mise à jour de l'application, nous pourrions intégrer <strong>Google Firebase Analytics et Crashlytics</strong> afin de mesurer des événements d'utilisation anonymes et la stabilité de l'application. Lors de cette mise à jour, nous pourrions aussi activer l'invite App Tracking Transparency si un suivi inter-apps s'applique (voir section 04). La version actuelle de l'App Store n'affiche <strong>pas</strong> l'invite ATT et ne transmet <strong>pas</strong> de données analytiques.</li>
           </ul>
         `
       },
@@ -565,12 +571,15 @@ window.PRIVACY_I18N = {
         number: "04",
         title: "App Tracking Transparency (ATT)",
         bodyHtml: `
-          <p>PhotoPrep peut afficher l'invite <strong>App Tracking Transparency</strong> d'Apple, qui demande si l'application peut utiliser l'identifiant publicitaire de votre appareil (IDFA) pour le suivi à travers les applications et sites web d'autres entreprises.</p>
+          <div class="callout callout-warn">
+            <p><strong>Version actuelle de l'App Store (v1.0) :</strong> PhotoPrep n'affiche <strong>pas</strong> l'invite App Tracking Transparency (ATT) d'Apple et ne vous suit <strong>pas</strong> à travers les apps ou sites web d'autres entreprises. Aucun identifiant publicitaire (IDFA) n'est utilisé.</p>
+          </div>
+          <p>Le cadre <strong>App Tracking Transparency</strong> d'Apple demande si une application peut utiliser l'identifiant publicitaire (IDFA) de votre appareil pour le suivi à travers les apps et sites web d'autres entreprises.</p>
           <ul>
-            <li><strong>Pourquoi nous demandons :</strong> Nous prévoyons d'utiliser des analyses anonymes (Firebase) dans de futures mises à jour pour comprendre les fonctionnalités utilisées et améliorer la stabilité. L'autorisation ATT est exigée par Apple avant que cet identifiant puisse être utilisé à des fins analytiques liées à d'autres apps.</li>
-            <li><strong>Version actuelle :</strong> Les analyses ne sont pas encore actives. Refuser le suivi n'<strong>affecte pas</strong> les fonctionnalités actuelles de PhotoPrep — tous les outils d'édition fonctionnent entièrement sans autorisation de suivi.</li>
+            <li><strong>Pourquoi nous pourrions demander plus tard :</strong> Lors de l'intégration de Firebase Analytics, nous pourrions demander l'autorisation ATT si l'IDFA est utilisé pour des analyses inter-apps — comme l'exige Apple.</li>
+            <li><strong>Version actuelle :</strong> L'invite ATT est <strong>désactivée</strong>. Tous les outils d'édition fonctionnent sans autorisation de suivi.</li>
             <li><strong>Aucune publicité inter-apps :</strong> PhotoPrep n'affiche pas de publicité et ne vend pas vos données. Nous n'utilisons pas le suivi à des fins publicitaires.</li>
-            <li><strong>Votre choix :</strong> Vous pouvez modifier votre décision à tout moment dans <strong>Réglages → Confidentialité et sécurité → Suivi</strong> sur votre iPhone ou iPad, ou dans <strong>Menu → Confidentialité → Autorisations</strong> dans PhotoPrep.</li>
+            <li><strong>Lorsqu'elle sera activée dans une future version :</strong> Vous pourrez modifier votre choix dans <strong>Réglages → Confidentialité et sécurité → Suivi</strong> sur votre iPhone ou iPad, ou dans <strong>Menu → Confidentialité → Autorisations</strong> dans PhotoPrep.</li>
           </ul>
         `
       },
@@ -600,9 +609,9 @@ window.PRIVACY_I18N = {
             <li>Des événements d'utilisation d'écran et de fonctionnalités (par exemple, quel mode d'édition a été utilisé).</li>
             <li>Des événements de réussite ou d'échec du traitement avec le nom du mode d'édition, le nombre de photos et les octets économisés — <strong>jamais le contenu des photos ni les noms de fichiers sélectionnés</strong>.</li>
             <li>Des traces de pile de plantage et des rapports d'erreurs non fatales pour aider à corriger les problèmes de stabilité.</li>
-            <li>Les identifiants standards d'appareil et d'instance d'application Firebase décrits dans la documentation Google, sous réserve de votre choix ATT sur iOS.</li>
+            <li>Les identifiants standards d'appareil et d'instance d'application Firebase décrits dans la documentation Google. Si un suivi inter-apps basé sur l'IDFA est utilisé, cela sera soumis à votre choix ATT sur iOS.</li>
           </ul>
-          <p>Vous pouvez limiter l'analytique à l'aide des réglages de confidentialité de votre appareil et en refusant le suivi des apps. La désinstallation de l'application arrête toute collecte ultérieure depuis cette installation.</p>
+          <p>Dans la version actuelle, aucune donnée analytique n'est collectée. Lorsque Firebase sera activé dans une future mise à jour, vous pourrez limiter l'analytique via les réglages de confidentialité de l'appareil et en refusant le suivi des apps si l'invite ATT est affichée. La désinstallation de l'application arrête toute collecte ultérieure depuis cette installation.</p>
         `
       },
       {
@@ -655,7 +664,7 @@ window.PRIVACY_I18N = {
             <li><strong>Accès :</strong> L'historique et les réglages sont disponibles directement dans l'application.</li>
             <li><strong>Suppression :</strong> Supprimez des entrées d'historique, videz tout l'historique dans Réglages ou désinstallez l'application.</li>
             <li><strong>Autorisations photos :</strong> Gérez l'accès à la Photothèque dans les réglages iOS ou Menu → Confidentialité → Autorisations.</li>
-            <li><strong>Suivi :</strong> Refusez le suivi des apps sans perdre l'accès aux fonctionnalités d'édition.</li>
+            <li><strong>Suivi :</strong> La version actuelle ne vous suit pas et n'affiche pas l'invite ATT. Dans une future version avec Firebase, vous pourrez refuser le suivi des apps sans perdre l'accès aux fonctionnalités d'édition.</li>
             <li><strong>Contrôle des métadonnées :</strong> Activez la suppression EXIF par défaut dans Réglages avant de partager des photos.</li>
             <li><strong>GDPR (UE/EEE) :</strong> Des droits supplémentaires peuvent s'appliquer. Pour les futures données Firebase traitées par Google, consultez les ressources GDPR de Google.</li>
             <li><strong>CCPA (Californie) :</strong> PhotoPrep ne vend pas vos informations personnelles.</li>
